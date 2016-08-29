@@ -1,11 +1,11 @@
 # concierge-app
 Name: Miles The Concierge
 
-Version: 1.2 (Still In Development - Further improvements to come)
+Version: 1.3 (Integrates Navigation Controller and Configuration View)
 
 Author Comments: “Miles The Concierge“ Objective-C Example/Demonstration Application
 
-Pre-Requisites: The Jabber Guest SDK for iOS must be integrated into this project before it will correctly function. This is a simple process. You can download the SDK and integration instructions from the URL in credits. Please note SDK version 10.6.8.863 has been tested only. Other SDK versions may be met with mixed results.
+Pre-Requisites: The Jabber Guest SDK for iOS must be integrated into this project before it will correctly function. This is a simple process. You can download the SDK and integration instructions from the URL in credits. Please note SDK version 10.6.8.863 has been tested only. Other SDK versions may be met with mixed results. Cisco Spark can also be used as target URI. Please refer: https://developer.ciscospark.com/
 
 Synopsis: Miles The Concierge is a simple iOS application that uses the Core Location and Jabber Guest frameworks to demonstrate the concepts of Ranging and Region Monitoring with Bluetooth Low Energy (BLE) Beacons alongside broader platfrom integration possibilities. 
 
