@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  MilesTheConcierge_ObjC
 //
-//  Created by James McKee on 15/02/2016.
-//  Copyright © 2016 James McKee. All rights reserved.
+//  Created by James McKee on 26/01/2017.
+//  Copyright © 2017 James McKee. All rights reserved.
 //
 //  Credits and References:
 //  https://developer.apple.com/library/ios/samplecode/AirLocate/Listings/ReadMe_txt.html
@@ -13,6 +13,9 @@
 
 
 #import "AppDelegate.h"
+@import UserNotifications; // iOS 10 addition
+
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending) //iOS 10 definition
 
 @interface AppDelegate ()
 
@@ -21,11 +24,14 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Override point for customization after application launch.
     [NSThread sleepForTimeInterval:2];
-    [self registerForRemoteNotification];
+    [self registerForRemoteNotifications];
+    
+    
     
     // Setup default values for first time launch
     NSMutableDictionary *defaultsDictionary = [@{@"ServerName":@"jabberguestsandbox.cisco.com",
@@ -40,19 +46,36 @@
 }
 
 
-- (void)registerForRemoteNotification {
-    
-    // Register for remote notifications
-    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+- (void)registerForRemoteNotifications {
+    // Check for iOS 10
+    if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
+            if(!error){
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];
+    }
+    else {
+        // Old iOS <9 method can be added here if necessary
+        //[[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        NSLog(@"Please check iOS version for notification support");
+    }
 }
 
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    
-    // Check user did register for notifications
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
+// Called when a notification is delivered to a foreground app - iOS 10
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    NSLog(@"User Info : %@",notification.request.content.userInfo);
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
 }
 
+// Called to let your app know which action was selected by the user for a given notification - iOS 10
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    NSLog(@"User Info : %@",response.notification.request.content.userInfo);
+    completionHandler();
+}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
@@ -119,16 +142,32 @@
     
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         
-        UILocalNotification * notification = [[UILocalNotification alloc] init];
+        // iOS10 UNNotification Implementation
+        UNMutableNotificationContent * notification = [[UNMutableNotificationContent alloc] init];
         if ([self.beaconRegion.major intValue] == 0) {
             
+            // title - iOS10 notifications
+            notification.title = [NSString localizedUserNotificationStringForKey:@"Miles the Concierge:" arguments:nil];
+            
             // use user customised UI notification from NSUserDefaults
-            notification.alertBody = [[NSUserDefaults standardUserDefaults] valueForKey:@"NotificationName"];
+            notification.body = [[NSUserDefaults standardUserDefaults] valueForKey:@"NotificationName"];
+            notification.sound = [UNNotificationSound defaultSound];
+            notification.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
         }
         
-        notification.soundName = UILocalNotificationDefaultSoundName;
-        notification.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+        // define notification trigger (region)
+        UNLocationNotificationTrigger *locTrigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:YES];
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"Beacon"
+                                                                              content:notification trigger:locTrigger];
+        // Schedule local notification
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        
+        [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"NotificationRequest was succeeful!");
+            }
+        }];
+        
     }
 }
 

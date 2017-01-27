@@ -2,8 +2,8 @@
 //  InfoViewController.m
 //  MilesTheConcierge_ObjC
 //
-//  Created by James McKee on 15/02/2016.
-//  Copyright © 2016 James McKee. All rights reserved.
+//  Created by James McKee on 26/01/2017.
+//  Copyright © 2017 James McKee. All rights reserved.
 //
 //  Credits and References:
 //  https://developer.apple.com/library/ios/samplecode/AirLocate/Listings/ReadMe_txt.html
