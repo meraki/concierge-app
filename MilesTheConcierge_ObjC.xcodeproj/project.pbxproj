@@ -10,13 +10,6 @@
 		560CBF501D73F6E80030F5F7 /* Cisco-Meraki-icon-456x456.png in Resources */ = {isa = PBXBuildFile; fileRef = 560CBF4F1D73F6E80030F5F7 /* Cisco-Meraki-icon-456x456.png */; };
 		562F244B1CB88B690020344E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562F244A1CB88B690020344E /* SettingsViewController.m */; };
 		5634CF0F1CB8B151007901B4 /* Settings-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5634CF0E1CB8B151007901B4 /* Settings-Icon.png */; };
-		5634CF181CB8C8C8007901B4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF171CB8C8C8007901B4 /* AVFoundation.framework */; };
-		5634CF1A1CB8C8D3007901B4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF191CB8C8D3007901B4 /* AudioToolbox.framework */; };
-		5634CF1C1CB8C8DF007901B4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF1B1CB8C8DF007901B4 /* CoreMedia.framework */; };
-		5634CF1E1CB8C8E9007901B4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF1D1CB8C8E9007901B4 /* MediaPlayer.framework */; };
-		5634CF201CB8C8F3007901B4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF1F1CB8C8F3007901B4 /* QuartzCore.framework */; };
-		5634CF221CB8C8FE007901B4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF211CB8C8FE007901B4 /* Security.framework */; };
-		5634CF241CB8C908007901B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF231CB8C908007901B4 /* SystemConfiguration.framework */; };
 		563B77E01CB745690042253B /* Information-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 563B77DF1CB745690042253B /* Information-Icon.png */; };
 		5666D6141CBBAF2E00BB23CE /* JabberGuest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666D6131CBBAF2E00BB23CE /* JabberGuest.framework */; };
 		5666D6161CBBAF3F00BB23CE /* JabberGuest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5666D6151CBBAF3F00BB23CE /* JabberGuest.bundle */; };
@@ -31,6 +24,16 @@
 		56BEF44F1CBBCA8A0094B9D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568C00331CB3082900704AE5 /* Main.storyboard */; };
 		56E699B51CB8D4980041EBA8 /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E699B31CB8D4640041EBA8 /* libiconv.2.dylib */; };
 		56E699B61CB8D4B60041EBA8 /* libresolv.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E699B11CB8D4370041EBA8 /* libresolv.9.dylib */; };
+		56F215E71E3C151B006573EB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F215E51E3C13A8006573EB /* CoreLocation.framework */; };
+		56F215E91E3C1522006573EB /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F215E81E3C1522006573EB /* CallKit.framework */; };
+		56F215EA1E3C1529006573EB /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666D6061CB9E97000BB23CE /* VideoToolbox.framework */; };
+		56F215EB1E3C152F006573EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF171CB8C8C8007901B4 /* AVFoundation.framework */; };
+		56F215EC1E3C1536006573EB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF191CB8C8D3007901B4 /* AudioToolbox.framework */; };
+		56F215ED1E3C153D006573EB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF1B1CB8C8DF007901B4 /* CoreMedia.framework */; };
+		56F215EE1E3C1545006573EB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF1D1CB8C8E9007901B4 /* MediaPlayer.framework */; };
+		56F215EF1E3C154E006573EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF1F1CB8C8F3007901B4 /* QuartzCore.framework */; };
+		56F215F01E3C1554006573EB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF211CB8C8FE007901B4 /* Security.framework */; };
+		56F215F11E3C155B006573EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5634CF231CB8C908007901B4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,8 @@
 		568C00491CB310DB00704AE5 /* Cisco-Meraki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cisco-Meraki.png"; sourceTree = "<group>"; };
 		56E699B11CB8D4370041EBA8 /* libresolv.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.9.dylib; path = ../../../../../usr/lib/libresolv.9.dylib; sourceTree = "<group>"; };
 		56E699B31CB8D4640041EBA8 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../../../../../usr/lib/libiconv.2.dylib; sourceTree = "<group>"; };
+		56F215E51E3C13A8006573EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		56F215E81E3C1522006573EB /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,15 +80,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F215F11E3C155B006573EB /* SystemConfiguration.framework in Frameworks */,
+				56F215F01E3C1554006573EB /* Security.framework in Frameworks */,
+				56F215EF1E3C154E006573EB /* QuartzCore.framework in Frameworks */,
+				56F215EE1E3C1545006573EB /* MediaPlayer.framework in Frameworks */,
+				56F215ED1E3C153D006573EB /* CoreMedia.framework in Frameworks */,
+				56F215EC1E3C1536006573EB /* AudioToolbox.framework in Frameworks */,
+				56F215EB1E3C152F006573EB /* AVFoundation.framework in Frameworks */,
+				56F215EA1E3C1529006573EB /* VideoToolbox.framework in Frameworks */,
+				56F215E91E3C1522006573EB /* CallKit.framework in Frameworks */,
+				56F215E71E3C151B006573EB /* CoreLocation.framework in Frameworks */,
 				56E699B61CB8D4B60041EBA8 /* libresolv.9.dylib in Frameworks */,
 				56E699B51CB8D4980041EBA8 /* libiconv.2.dylib in Frameworks */,
-				5634CF241CB8C908007901B4 /* SystemConfiguration.framework in Frameworks */,
-				5634CF221CB8C8FE007901B4 /* Security.framework in Frameworks */,
-				5634CF201CB8C8F3007901B4 /* QuartzCore.framework in Frameworks */,
-				5634CF1E1CB8C8E9007901B4 /* MediaPlayer.framework in Frameworks */,
-				5634CF1C1CB8C8DF007901B4 /* CoreMedia.framework in Frameworks */,
-				5634CF1A1CB8C8D3007901B4 /* AudioToolbox.framework in Frameworks */,
-				5634CF181CB8C8C8007901B4 /* AVFoundation.framework in Frameworks */,
 				5666D6141CBBAF2E00BB23CE /* JabberGuest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +102,8 @@
 		5634CF121CB8C736007901B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56F215E81E3C1522006573EB /* CallKit.framework */,
+				56F215E51E3C13A8006573EB /* CoreLocation.framework */,
 				5666D6151CBBAF3F00BB23CE /* JabberGuest.bundle */,
 				5666D6131CBBAF2E00BB23CE /* JabberGuest.framework */,
 				5666D6061CB9E97000BB23CE /* VideoToolbox.framework */,
@@ -197,7 +207,7 @@
 		568C001F1CB3082900704AE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "James McKee";
 				TargetAttributes = {
 					568C00261CB3082900704AE5 = {
@@ -284,7 +294,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -292,8 +302,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: James McKee (NBL5C8PPGW)";
@@ -317,10 +329,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64";
@@ -333,7 +345,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -341,8 +353,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: James McKee (NBL5C8PPGW)";
@@ -360,10 +374,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -375,14 +389,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MilesTheConcierge_ObjC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcmconsulting.MilesTheConcierge-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,14 +409,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MilesTheConcierge_ObjC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcmconsulting.MilesTheConcierge-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
