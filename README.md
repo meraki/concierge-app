@@ -11,6 +11,8 @@ Synopsis: Miles The Concierge is a simple iOS application that uses the Core Loc
 
 The purpose of this application is to demonstrate one of the many use cases BLE Beacons can provide i.e. user engagement and notification escalated to application handoff via Cisco collaboration (Jabber Guest video). This detection capability can provide the basis for user engagement based on location.
 
+Users can configure BLE UI notification, collaboration server e.g. Jabber Guest, and SIP URI to call. SIP endpoints can include, Jabber, Cisco Spark, Cisco Spark Rooms, Cisco VoIP handsets, Telepresence Endpoints etc.
+
 Please note, beacon and ranging configuration has been tuned to emphasise use case. Source can be easily updated to meet your needs. 
 
 This application relies on the following UUID being configured for operation:
